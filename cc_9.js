@@ -56,15 +56,15 @@ console.log("Task 2 part 2:", mgr1.calculateBonus());
 
 //Task 3 - Created Company Class
 
-class Company {
-    constructor(name) {
+class Company { // Create a company class
+    constructor(name) { // made a consturctor with compant name
         this.name = name;
-        this.employees = [];
+        this.employee = []; // created empty array 
     }
-    addEmployee(employee) {
-        this.employees.push(employee);
+
+    addEmployee(employee) { // for adding a new employeee
+        this.employee.push(employee);
     }
     listEmployees() {
-        this.employees.forEach(employee => console.log("Task 3:", employee.getDetails()));
-    }
-}
+        this.employee.forEach(employee => console.log("Task 3:", employee.getDetails())); 
+    }}
