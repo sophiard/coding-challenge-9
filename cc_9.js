@@ -54,17 +54,43 @@ console.log("Task 2 part 2:", mgr1.calculateBonus());
 //logged results 
 
 
-//Task 3 - Created Company Class
+// Task 3 - Created Company Class
 
 class Company { // Create a company class
-    constructor(name) { // made a consturctor with compant name
+    constructor(name) { // made a consturctor with company name
         this.name = name;
         this.employee = []; // created empty array 
     }
 
-    addEmployee(employee) { // for adding a new employeee
+    addEmployee(employee) { // for adding a new employee
         this.employee.push(employee);
     }
-    listEmployees() {
-        this.employee.forEach(employee => console.log("Task 3:", employee.getDetails())); 
-    }}
+
+    listEmployees() { // Method to list all employees
+        this.employee.forEach(employee => console.log("Task 3 and 5:", employee.getDetails())); 
+    }
+
+
+    // Task 4 - Calculate total payroll
+    calculateTotalPayroll() { // created a payroll system that calculates total payroll
+        return this.employee.reduce((total, employee) => { 
+            return total + employee.calculateAnnualSalary();
+        }, 0); 
+    }
+
+    // Task 5 Implementing Promotion
+    promoteToManager(employee, teamSize) { // creates new manager while going off same system 
+        const index = this.employee.indexOf(employee); 
+        this.employee[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize); 
+    }
+}
+
+
+const company = new Company("TechCorp");
+company.addEmployee(emp1); // Adding a new employee
+company.addEmployee(mgr1); // Adding new Manager
+company.listEmployees(); // List of employees
+console.log("Task 4:", company.calculateTotalPayroll()); //total payroll 
+company.promoteToManager(emp1, 3); // promates an employee to manager postion 
+console.log("After Promotion:"); 
+company.listEmployees(); // lists updates 
