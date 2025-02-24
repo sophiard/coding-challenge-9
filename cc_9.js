@@ -52,3 +52,19 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5); //added a new manage
 console.log("Task 2 part 1:", mgr1.getDetails());
 console.log("Task 2 part 2:", mgr1.calculateBonus());
 //logged results 
+
+
+//Task 3 - Created Company Class
+
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+    listEmployees() {
+        this.employees.forEach(employee => console.log("Task 3:", employee.getDetails()));
+    }
+}
