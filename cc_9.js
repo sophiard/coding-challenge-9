@@ -93,4 +93,4 @@ company.listEmployees(); // List of employees
 console.log("Task 4:", company.calculateTotalPayroll()); //total payroll 
 company.promoteToManager(emp1, 3); // promates an employee to manager postion 
 console.log("After Promotion:"); 
-company.listEmployees(); // lists updates 
+company.listEmployees(); // lists updates
