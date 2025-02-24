@@ -27,4 +27,28 @@ class Employee {
 //logged my results 
 
 
+// Task 2 - Created Manager Class with Inheritance
+class Manager extends Employee { // created a class Manager that extends the employee class
+    constructor(name, id, department, salary, teamSize) { 
+        super(name, id, department, salary);//makes employee info
+        this.teamSize = teamSize;
+    }
 
+    getDetails() {
+        return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: $${this.salary}, Team Size: ${this.teamSize}`;
+    }   
+// helps describe the manager 
+    calculateAnnualSalary() {
+        return this.salary * 12 + this.calculateBonus();
+    }
+    //formula and fucntion that calculates the annual salary
+
+    calculateBonus() {
+        return this.salary * 0.10 * 12; //added bonus
+    }
+}
+
+const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5); //added a new manager
+console.log("Task 2 part 1:", mgr1.getDetails());
+console.log("Task 2 part 2:", mgr1.calculateBonus());
+//logged results 
